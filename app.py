@@ -43,7 +43,7 @@ if uploaded_file is not None:
     X = np.array(X)
     y = encoder.fit_transform(np.array(y))
 
-    if(st.button('Load model')):
+    if(st.button('Prédiction')):
 
         predictions = model.predict(X)
 
