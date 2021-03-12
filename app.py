@@ -19,6 +19,8 @@ def read_img(img):
 
 st.title('Prédiction Chien')
 
+model = load_model("./model.h5")
+
 uploaded_file = st.file_uploader("Upload Image")
 
 if uploaded_file is not None:
@@ -42,8 +44,6 @@ if uploaded_file is not None:
     y = encoder.fit_transform(np.array(y))
 
     if(st.button('Load model')):
-
-        model = load_model("./model.h5")
 
         predictions = model.predict(X)
 
